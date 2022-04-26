@@ -13,9 +13,11 @@
 
     document.querySelector("button").addEventListener('click', () => {
         const gender = document.querySelector('input[name="gender"]:checked').value;
-        const para = document.createElement("p");
         
-        document.body.appendChild(para);
+        const para = document.createElement("p");
+    para.innerText = "This is a Test";
+    document.body.appendChild(para);
+
 
 
         getRandomUserData(gender)
