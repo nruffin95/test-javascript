@@ -5,11 +5,14 @@ const activity = document.getElementById('activity')
 const button = document.getElementById('button1')
 
     const getRandomUserData = () => {
+        
         fetch(`https://randomuser.me/api/`)
         .then(res => res.json())
         .then(data => {
             console.log(data)
-            pushIt.innerHTML = data.results[0].name.first
+            const firstName = data.results[0].name.first
+            const lastName = data.results[0].name.last
+            pushIt.innerHTML = firstName + " " + lastName
             getIt.innerHTML = data.results[0].dob.age
             gender.innerHTML = data.results[0].email
         })
