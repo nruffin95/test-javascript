@@ -4,18 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Random User</title>
 </head>
 <body>
-    <h1>Random Date Picker</h1>
-
+    <div class="container"> 
+    <h1 class="header">Random Date Picker</h1>
+    <h4>Choose Your Gender</h4>
+    <div class="input">
     <input type="radio" id="male" name="gender" value="male">
     <label for="gender">Female</label>
 
     <input type="radio" id="female" name="gender" value="female" checked>
     <label for="gender">Male</label>
+    </div>
+
+
     <p id="push"></p>
-    <button id="button1">Request users</button>
+    <p id="get"></p>
+    <p id="gender"></p>
+    <p id="activity"></p>
+
+
+    <div class="button">
+    <button id="button1">Request Users</button>
+    </div>   
+    </div>
     <script src="./js/script.js"></script>
 </body>
 </html>
