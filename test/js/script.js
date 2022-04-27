@@ -1,27 +1,14 @@
+const pushIt = document.getElementById('push')
+const button = document.getElementById('button1')
 
-   const getRandomActivity = () => {
-        fetch("https://www.boredapi.com/api/activity")
-        .then((data) => data.json())
-        .then((data) => console.log(data));
-    };
+    const getRandomUserData = () => {
+        fetch(`https://randomuser.me/api/`)
+        .then(res => res.json())
+        .then(data => {
+            pushIt.innerHTML = data.results[0].email
+        })
+    }
 
-    const getRandomUserData = (gender) => {
-        fetch(`https://randomuser.me/api/?gender=${gender}`)
-        .then((data) => data.json())
-        .then((data) => console.log(data));
-    };
-
-    document.querySelector("button").addEventListener('click', () => {
-        const gender = document.querySelector('input[name="gender"]:checked').value;
-        
-        const para = document.createElement("p");
-    para.innerText = "This is a Test";
-    document.body.appendChild(para);
-
-
-
-        getRandomUserData(gender)
-        getRandomActivity()
-
-    })
-
+   button.addEventListener("click", function() {
+    getRandomUserData()
+  });
