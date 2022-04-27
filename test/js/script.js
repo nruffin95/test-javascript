@@ -12,9 +12,11 @@ const button = document.getElementById('button1')
             console.log(data)
             const firstName = data.results[0].name.first
             const lastName = data.results[0].name.last
+            const cityLocation = data.results[0].location.city
+            const  country = data.results[0].location.country
             pushIt.innerHTML = firstName + " " + lastName
-            getIt.innerHTML = data.results[0].dob.age
-            gender.innerHTML = data.results[0].email
+            getIt.innerHTML = "Age: " + data.results[0].dob.age
+            gender.innerHTML = cityLocation + ", " + country
         })
     }
 
@@ -23,7 +25,7 @@ const button = document.getElementById('button1')
         .then(res => res.json())
         .then(data => {
             console.log(data)
-            activity.innerHTML = data.activity
+            activity.innerHTML = "Task: " + data.activity
         })
     }
 
