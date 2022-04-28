@@ -4,6 +4,11 @@ const gender = document.getElementById('gender')
 const activity = document.getElementById('activity')
 const button = document.getElementById('button1')
 const picture = document.getElementById('picture')
+const buttonClick = document.getElementById('button')
+
+buttonClick.addEventListener('click', () => {
+    location.href = "datepage.html"
+})
 
     const getRandomUserData = () => {
         
@@ -11,6 +16,7 @@ const picture = document.getElementById('picture')
         .then(res => res.json())
         .then(data => {
             console.log(data)
+
             const firstName = data.results[0].name.first
             const lastName = data.results[0].name.last
             const cityLocation = data.results[0].location.city
